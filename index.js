@@ -1,5 +1,5 @@
 const { Client, GatewayIntentBits, ApplicationCommandOptionType } = require('discord.js');
-const token = 'TOKEN';
+const token = 'DS_TOKEN';
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 const GigaChat = require('gigachat-node').GigaChat;
 const client_giga = new GigaChat(
@@ -35,7 +35,7 @@ client.on('interactionCreate', async interaction => {
   if (!interaction.isChatInputCommand()) return;
   
   switch (interaction.commandName) {
-        case 'NAME FORM COMMAND VARIABLE': {
+        case 'NAME FROM COMMAND VARIABLE': {
             const {options} = interaction;
             if (options.getString('SUBCOMMAND NAME FROM COMMAND VARIABLE')) {
                 await interaction.reply("Генерирую...")
@@ -45,7 +45,7 @@ client.on('interactionCreate', async interaction => {
                         "messages": [
                           {
                             role: "user",
-                            content: options.getString('prompt')
+                            content: options.getString('SUBCOMMAND NAME FROM COMMAND VARIABLE')
                           }  
                         ] 
                     });
